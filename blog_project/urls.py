@@ -20,5 +20,8 @@ from django.urls import path,include
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("accounts/", include("django.contrib.auth.urls")),  # this line is for ogit account
+    path('accounts/', include('accounts.urls')),  # the order is important, django first looks in  auth and then in accounts
     path("", include("blog.urls")),
+    
 ]
